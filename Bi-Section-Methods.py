@@ -25,12 +25,12 @@ def sign(x):
 
 def plotGrap(xk):
     pa,py,pz,= [],[],[]
-    plt.plot([0,b0], [0,0],'black')
-    plt.plot([0,a0], [0,0],'black')
+    plt.plot([0,b0+1], [0,0],'black')
+    plt.plot([0,a0+1], [0,0],'black')
     
-    for ax in range(b0-a0+1):
-        pa.append(a0+ax)
-        py.append(myfucntion(a0+ax))
+    for ax in range((b0-a0+1)*100):
+        pa.append(a0+(ax/100))
+        py.append(myfucntion(a0+(ax/100)))
         
     for z in range (len(pxk)):
         pz.append(0)
@@ -58,14 +58,15 @@ if(myfucntion(a)* myfucntion(b) < 0):
         
     
         if(abs(fx) <= e):
-            print("Find root with value <= tolerance  @ ",xk)
+            
+            print("Find root with value <= tolerance =", fx ,"@ ",xk)
             diction = diction - 1
             
-    
-        if(abs((xk1-xk)/xk) <=  e):
-            print("Find root with relative <= tolerance  @ ",xk)
+
+        if(abs((xk1-xk)/xk) <= e):
+            print("Find root with relative <= tolerance  =", fx ,"@ ",xk)
             diction = diction - 1
-           
+      
         if(diction <= 0):
             plotGrap(xk)
             break
