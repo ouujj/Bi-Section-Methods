@@ -24,7 +24,7 @@ def sign(x):
 def plotGrap(xk):
     pa,py,pz,= [],[],[]
     plt.plot([0,b0], [0,0],'black')
-    for a0 in range(b0):
+    for a0 in range(b0+1):
         pa.append(a0)
         py.append(myfucntion(a0))
     for z in range (len(pxk)):
