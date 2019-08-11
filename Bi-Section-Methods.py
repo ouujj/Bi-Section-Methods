@@ -55,17 +55,17 @@ if(myfucntion(a)* myfucntion(b) < 0):
         fb = myfucntion(b)
         fa = myfucntion(a)
         fx = myfucntion(xk)
-        
+        print("f(x) = ",fx)
     
         if(abs(fx) <= e):
             
-            print("Find root with value <= tolerance =", fx ,"@ ",xk)
+            print("Find root with value <= tolerance @ ",xk)
             diction = diction - 1
             
-
-        if(abs((xk1-xk)/xk) <= e):
-            print("Find root with relative <= tolerance  =", fx ,"@ ",xk)
-            diction = diction - 1
+        if(xk != 0):
+            if(abs((xk1-xk)/(xk)) <= e):
+                print("Find root with relative <= tolerance  @ ",xk)
+                diction = diction - 1
       
         if(diction <= 0):
             plotGrap(xk)
@@ -84,4 +84,4 @@ else:
     plotGrap(0)
 
 
-        
+
